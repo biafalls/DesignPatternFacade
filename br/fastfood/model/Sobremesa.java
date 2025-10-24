@@ -1,13 +1,26 @@
 package br.fastfood.model;
 
-public class Sobremesa /*implements ItemCombo*/ {
-    // TODO: Declare os atributos necessários
-    
-    // TODO: Implemente o construtor
-    
-    // TODO: Implemente getNome()
-    
-    // TODO: Implemente getPreco()
-    
-    // TODO: Sobrescreva toString() para formatação adequada
+public class Sobremesa implements ItemCombo {
+	private final String nome;
+    private final double preco;
+	
+	public Sobremesa(String nome, double preco) {
+		this.nome = nome;
+		this.preco = preco;
+	}
+	
+	@Override
+	public String getNome() {
+		return nome;
+	}
+	
+	@Override
+	public double getPreco() {
+		return preco;
+	}
+	
+	@Override
+    public String toString() {
+        return String.format("%s (R$ %.2f)", nome, preco);
+    }
 }
